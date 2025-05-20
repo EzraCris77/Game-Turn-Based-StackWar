@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stackwar - Simulasi PDA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Stackwar - Simulasi PDA Turn-Based</h1>
+
+    <div class="game-area">
+      <div class="player" id="player1"> 
+        <img src="player1.png" alt="Pemain 1" class="avatar">
+            <div class="hp-bar">
+                <div class="hp-bar-inner" id="barP1">100%</div>
+</div>
+        <h2>Pemain 1</h2>
+        <div class="stack" id="stackP1"></div>
+        <p>HP: <span id="hpP1">100</span></p>
+        <p>Buff: <span id="buffP1">-</span></p>
+        <div class="controls" id="controlsP1">
+          <button onclick="serang('P1')">Serang</button>
+          <button onclick="bertahan('P1')">Bertahan</button>
+        </div>
+      </div>
+
+      <div class="player" id="player2">
+        <img src="ai.png" alt="AI" class="avatar">
+        <div class="hp-bar">
+  <div class="hp-bar-inner" id="barP2">100%</div>
+</div>
+        <h2>Pemain 2 (AI)</h2>
+        <div class="stack" id="stackP2"></div>
+        <p>HP: <span id="hpP2">100</span></p>
+        <p>Buff: <span id="buffP2">-</span></p>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>Giliran: <span id="turnInfo">Pemain 1</span></p>
+      <div id="log"></div>
+      <div id="trace"></div>
+    </div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="soundAttack" src="attack.mp3" preload="auto"></audio>
+  <audio id="soundDefend" src="defend.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

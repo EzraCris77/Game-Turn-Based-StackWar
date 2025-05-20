@@ -1,0 +1,180 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: url('bg-pixel.jpg');
+    background-size: 768 432px;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  h1 {
+    margin-bottom: 2rem;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .game-area {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .player {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 42%;
+    min-width: 300px;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+  }
+  
+  .player:hover {
+    transform: scale(1.02);
+  }
+  
+  .player h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #444;
+  }
+  
+  /* Ikon Karakter */
+  .avatar {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+    image-rendering: pixelated;
+  }
+  
+  /* Stack Container */
+  .stack {
+    background: #eaeaea;
+    height: 200px;
+    overflow-y: auto;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stack Item */
+  .stack div {
+    background: #4CAF50;
+    color: white;
+    padding: 0.4rem;
+    margin: 0.2rem 0;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.75rem;
+  }
+  
+  /* Efek Stack Penuh */
+  .stack.full {
+    border: 2px solid red;
+    animation: blink 0.6s infinite;
+  }
+  
+  @keyframes blink {
+    0% { box-shadow: 0 0 5px red; }
+    50% { box-shadow: 0 0 20px red; }
+    100% { box-shadow: 0 0 5px red; }
+  }
+  
+  /* HP Bar */
+  .hp-bar {
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 0.5rem;
+  }
+  
+  .hp-bar-inner {
+    height: 100%;
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+    font-size: 0.8rem;
+    transition: width 0.4s ease;
+  }
+  
+  /* Tombol */
+  .controls button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .controls button:hover {
+    background-color: #2980b9;
+  }
+  
+  .info {
+    margin-top: 2rem;
+  }
+  
+  #log {
+    font-style: italic;
+    color: #e7d5d5;
+    margin-top: 1rem;
+  }
+  
+  #trace {
+    background-color: #101111;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsif */
+  @media (max-width: 768px) {
+    .game-area {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .player {
+      width: 90%;
+    }
+  }
+  
