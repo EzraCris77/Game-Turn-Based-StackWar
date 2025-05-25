@@ -19,7 +19,7 @@
         <h2>Pemain 1</h2>
         <div class="stack" id="stackP1"></div>
         <p>HP: <span id="hpP1">100</span></p>
-        <p>Buff: <span id="buffP1">-</span></p>
+        <p>Buff: <span id="buffP1" class="buff-tooltip">-</span></p>
         <div class="controls" id="controlsP1">
           <button onclick="serang('P1')">Serang</button>
           <button onclick="bertahan('P1')">Bertahan</button>
@@ -34,7 +34,7 @@
         <h2>Pemain 2 (AI)</h2>
         <div class="stack" id="stackP2"></div>
         <p>HP: <span id="hpP2">100</span></p>
-        <p>Buff: <span id="buffP2">-</span></p>
+        <p>Buff: <span id="buffP2" class="buff-tooltip">-</span></p>
       </div>
     </div>
 
@@ -45,7 +45,11 @@
     </div>
   </div>
 
-  <!-- Sound Effects -->
+  <div id="gameOver" class="game-over hidden">
+  <h2 id="winnerMessage"></h2>
+  <button onclick="restartGame()">Main Lagi?🔁</button>
+</div>
+  
   <audio id="soundAttack" src="attack.mp3" preload="auto"></audio>
   <audio id="soundDefend" src="defend.mp3" preload="auto"></audio>
 
